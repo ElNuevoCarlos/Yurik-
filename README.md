@@ -1,1 +1,1 @@
-# Yurik-
+# Yuriko-
