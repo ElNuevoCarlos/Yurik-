@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- HEAD -->
-<head>
-    <meta charset="UTF-8">
-
-    <!-- Compatibilidad con navegadores -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <!-- Compatibilidad con navegadores -->
-
-    <!-- Para que se vea bien en (Celular) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!-- Para que se vea bien en (Celular) -->
-
-    <title>Yurikó ♡</title>
-
-    <!-- Icono de Yurikó -->
-    <link data-n-head="ssr" rel="icon" type="Yurikó ♡" href="../assets/Yuriko.png">
-    <!-- Icono de Yurikó -->
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
-    <link rel="stylesheet" href="css/demo.css" />
-	  <link rel="stylesheet" href="css/style.css">
-
-</head>
+<%- include('./components/header') -%>
 <!-- HEAD -->
 
 <body>
@@ -41,7 +15,7 @@
 
                 <!-- Botones -->
                 <div class="Buttons">
-                  <a class="btn btn-primary" href="/Discord" role="button">Discord</a>
+                  <a href="https://discord.gg/HdCRvS9KYz" class="btn btn-primary" role="button">Discord</a>
                   <a class="btn btn-primary" href="/dashboard" role="button">Dashboard</a>
                 </div>
                 <!-- Botones -->
@@ -65,14 +39,15 @@
       <div class="col-lg-4">
         <div class="card shadow-sm">
           <div class="card-header bg-transparent text-center">
-            <img class="profile_img" src="./Yuriko.png" alt="Loading">
+            <img class="profile_img" src="https://cdn.discordapp.com/avatars/903456741721780265/66a088d744cc2a3e4f57490234acb3d1.png?size=2048" alt="Loading">
             <h3>Yurikó ♡</h3>
           </div>
           <div class="card-body">
-            <p class="mb-0"><strong class="pr-1">Created Date |</strong>.....</p>
-            <p class="mb-0"><strong class="pr-1">NickName |</strong>Yurikó ♡#0027</p>
+            <p class="mb-0"><strong class="pr-1">Created |</strong>A year ago</p>
+            <p class="mb-0"><strong class="pr-1">Nickname |</strong>Yurikó ♡#0027</p>
             <p class="mb-0"><strong class="pr-1">ID |</strong>903456741721780265</p>
             <p class="mb-0"><strong class="pr-1">Bot |</strong>Verified</p>
+            <p class="mb-0"><strong class="pr-1">Servers |</strong><%= GuildsYuriko %></p>
           </div>
         </div>
       </div>
@@ -87,7 +62,7 @@
           </div>
           <div class="card-body">
             <p class="mb-0"><strong class="pr-1">Server |</strong>https://discord.gg/HdCRvS9KYz</p>
-            <p class="mb-0"><strong class="pr-1">NickName |</strong>Carlos.#0423</p>
+            <p class="mb-0"><strong class="pr-1">Nickname |</strong>Carlos.#0423</p>
             <p class="mb-0"><strong class="pr-1">Description |</strong>My purpose is to bring Discord users more protection and security for their servers.</p>
           </div>
         </div>
@@ -103,7 +78,7 @@
           </div>
           <div class="card-body">
             <p class="mb-0"><strong class="pr-1">Server |</strong>https://discord.gg/KyhagcYVrU</p>
-            <p class="mb-0"><strong class="pr-1">NickName |</strong>Zastinian#8451</p>
+            <p class="mb-0"><strong class="pr-1">Nickname |</strong>Zastinian#8451</p>
             <p class="mb-0"><strong class="pr-1">Description |</strong>Thinking of my happiness, I thought of you</p>
           </div>
         </div>
@@ -152,6 +127,7 @@
         </div>
       </div>
       </div>
+
 </section>
   <!-- Section -->
 

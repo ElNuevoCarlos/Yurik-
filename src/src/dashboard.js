@@ -12,8 +12,9 @@ const resindex = require('./res/resindex');
 
 module.exports = (client) => {
   try{
-    const dataDir = path.resolve(`${process.cwd()}${path.sep}src`);
+    const dataDir = path.resolve(`${process.cwd()}${path.sep}src${path.sep}src`);
     const templateDir = path.resolve(`${dataDir}${path.sep}web`);
+    const assetsDir = path.resolve(`${dataDir}${path.sep}assets`);
     passport.serializeUser((user, done) => done(null, user));
     passport.deserializeUser((obj, done) => done(null, obj));
     let domain
@@ -60,7 +61,7 @@ module.exports = (client) => {
         extended: true,
       })
     )
-    app.use("/", express.static(path.resolve(`${dataDir}${path.sep}assets`)))
+    app.use("/", express.static(assetsDir))
     const renderTemplate = (res, req, template, data = {}) => {
       const baseData = {
         bot: client,

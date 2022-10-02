@@ -29,6 +29,11 @@ html {
       width: 100%;
       padding-bottom:3em;
   }
+  sectionDashboard {
+    width: 100%;
+    font-size: 20px;
+    line-height: normal;
+  }
   h2 {
       color: #1a0e0e;
       font-size: 26px;
@@ -91,7 +96,7 @@ html {
   }
   .rt-heading {
       margin: 0 auto;
-      text-align:center;
+      text-align: center;
   }
   .Scriptcontent{
       line-height:28px;	
@@ -114,22 +119,7 @@ html {
       line-height: normal;
   
   }
-  .ScriptHeader h1 span {
-      display: block;
-      padding: 0;
-      font-size: 22px;
-      opacity: 0.7;
-      margin-top: 5px;
-  
-  }
-  .ScriptHeader span {
-      display: block;
-      padding: 0;
-      font-size: 22px;
-      opacity: 0.7;
-      margin-top: 5px;
-  }
-  
+
   
   
   

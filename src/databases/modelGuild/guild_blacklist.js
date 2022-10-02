@@ -4,7 +4,7 @@ const sequelize = new Sequelize('guild', 'user', '0000', {
     host: 'localhost',
     logging: false,
     dialect: 'sqlite',
-    storage: '../guild.sqlite',
+    storage: 'guild.sqlite',
     define: {
         freezeTableName: true,
         updatedAt: false,

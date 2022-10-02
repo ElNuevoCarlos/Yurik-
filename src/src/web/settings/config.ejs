@@ -1,25 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<%- include('./components/header') -%>
+<!-- HEAD -->
+
+<!-- Body -->
 <body>
-  <h3>Idioma UwU</h3>
-  <form role="form" action="/dashboard/<%= guild.id %>" method="POST">
-    <select name="language">
-      <% if(language=="en-US" ) { %>
-        <option value="en-US" selected>English</option>
-        <option value="es-ES">Español</option>
-      <% } else if(language=="es-ES" ) { %>
-        <option value="en-US">English</option>
-        <option value="es-ES" selected>Español</option>
-      <% } %>
-      <br />
-    </select>
-    <button type="submit">Update</button>
-  </form>
+
+  <!-- HEADER -->
+  <header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+
+            	<h1>DashBoard <%= guild.name %></h1>
+
+                <p>All Yurikó systems and configurations can be managed from this panel</p>
+
+                <!-- Botones -->
+                <div class="Buttons">
+                  <a href="/dashboard" class="btn btn-primary" role="button">Guilds</a>
+                  <a class="btn btn-primary" href="http://localhost:3000/" role="button">Home</a>
+                </div>
+                <!-- Botones -->
+
+          </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER -->
+
+  <sectionDashboard>
+ 
+    <div class="rt-container">
+      <div class="col-rt-12">
+      <div class="Scriptcontent">
+      <div class="student-profile py-4">
+      <div class="container">
+      <div class="row">
+
+    <!-- IDIOMA -->
+    <div class="col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-transparent text-center">
+          <h3>Idioma</h3>
+        </div>
+        <div class="card-body">
+          <p>Su idioma actual es <%= language %></p>
+          <form role="form" action="/dashboard/<%= guild.id %>" method="POST">
+            <select name="language">
+              
+              <% if(language=="en-US") { %>
+                <option value="en-US" selected>English</option>
+                <option value="es-ES">Español</option>
+              <% } else if(language=="es-ES") { %>
+                <option value="en-US">English</option>
+                <option value="es-ES" selected>Español</option>
+              <% }%>
+      
+              <br />
+            </select>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- IDIOMA -->
+    
+<!-- Footer -->
+<%- include('./components/footer') -%>
+<!-- Footer -->
+
+  </sectionDashboard>
+
 </body>
+<!-- Body -->
+
 </html>

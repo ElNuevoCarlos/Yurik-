@@ -14,38 +14,49 @@ module.exports = (checkAuth, app, client, renderTemplate) => {
     if (!guild_data) {
         await guild_basic.create({
             id: guild.id,
-            lang: 'en_US'
+            name: guild.name,
+            lang: 'en-US'
         })
+
+      renderTemplate(res, req, 'settings/config.ejs', {
+        guild: guild,
+        language: 'en-US'
+      })
+
+    } else {
+      renderTemplate(res, req, 'settings/config.ejs', {
+        guild: guild,
+        language: guild_data.lang
+      })
     }
 
-    renderTemplate(res, req, 'settings/config.ejs', {
-      guild: guild,
-      language: guild_data.lang
-    })
   })
 
   //Post para los envios
 
   app.post('/dashboard/:guildID', checkAuth, async (req, res) => { 
+
     const guild = client.guilds.cache.get(req.params.guildID)
+
     if (!guild) return res.redirect('/dashboard')
-    await guild.members.fetch()
-    const member = guild.members.cache.get(req.user.id);
+
+    const member = await guild.members.fetch(req.user.id)
+
     if (!member) return res.redirect('/dashboard');
+
     if (!member.permissions.has('Administrator')) {
       return res.redirect('/dashboard')
     }
+
     //Los datos que recibe
     let data = req.body
     const lang = data.language
 
-    await guild_basic.update({
-      lang: lang
-    }, {
-      where: {
-        id: guild.id
-      },
+    await guild_basic.findOne({ where: { id: guild.id}}).then(x=>{
+      x.lang = lang
+      x.save()
     })
+
     renderTemplate(res, req, 'settings/config.ejs', {
       guild: guild,
       language: lang

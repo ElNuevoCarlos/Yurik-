@@ -14,7 +14,7 @@ client.config = config;
 
 client.on('ready', () => {
   console.clear();
-  console.log('Client is ready');
+  console.log('Yurikó Dashboard (Online)');
 
   const guild_basic = require('./databases/modelGuild/guild_basic')
   const guild_blacklist = require('./databases/modelGuild/guild_blacklist')

@@ -1,50 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./components/header') -%>
+<!-- HEAD -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
+<!-- Body -->
 <body>
+
+  <!-- HEADER -->
+  <header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+
+            	<h1>Yurikó ♡ Guilds</h1>
+
+                <p>Visualize the servers you manage</p>
+
+                <!-- Botones -->
+                <div class="Buttons">
+                  <a href="https://discord.gg/HdCRvS9KYz" class="btn btn-primary" role="button">Discord</a>
+                  <a class="btn btn-primary" href="http://localhost:3000/" role="button">Home</a>
+                </div>
+                <!-- Botones -->
+
+            </div>
+        </div>
+    </div>
+</header>
+  <!-- HEADER -->
+
+  <sectionDashboard>
+ 
+  <div class="rt-container">
+  <div class="col-rt-12">
+  <div class="Scriptcontent">
+  <div class="student-profile-dashboard py-4">
+  <div class="container">
+  <div class="row">
+
+  <!-- Servers en donde (ESTA) Yuriko -->
   <% guilds_bot.map(guild => { %>
-    <% if (guild.icon) { iconurl="https://cdn.discordapp.com/icons/" + guild.id + "/" + guild.icon
-          + ".png??size=512" ; } else {
-          iconurl="https://blog.logomyway.com/wp-content/uploads/2020/12/discord-mascot.png" ; } %>
+
+    <% if (guild.icon) {
+          iconurl = "https://cdn.discordapp.com/icons/" + guild.id + "/" + guild.icon
+          + ".png??size=512" ; 
+        } else {
+          iconurl = "https://media.discordapp.net/attachments/1011085179441389612/1025868240385233059/unknown.png?width=130&height=130" ; 
+        } %>
+
+        <div class="col-lg-4">
+        <div class="card shadow-sm">
+        <div class="card-header bg-transparent text-center">
+          
         <div>
           <div>
-            <img src="<%= iconurl %>" />
+            <img class="profile_img" src="<%= iconurl %>" alt="Loading">
           </div>
         <div>
           <%= guild.name %>
         </div>
         <div>
           <a href="/dashboard/<%= guild.id %>">
-            <button>Manage</button>
+            <button class="btn2 btn-primary" role="button">Manage</button>
           </a>
         </div>
-      </div>
+        </div>
+        </div>
+        </div>
+        </div>
   <% })%>
+  <!-- Servers en donde (ESTA) Yuriko -->
+
+  <!-- Servers en donde (NO ESTA) Yuriko -->
   <% guilds_no_bot.map(guild => { %>
-    <% if (guild.icon) { iconurl="https://cdn.discordapp.com/icons/" + guild.id + "/" + guild.icon
-          + ".png??size=512" ; } else {
-          iconurl="https://blog.logomyway.com/wp-content/uploads/2020/12/discord-mascot.png" ; } %>
-    <div>
-      <div>
-        <img src="<%= iconurl %>" />
-      </div>
-      <div>
-        <%= guild.name %>
-      </div>
-      <div>
-        <a href="">
-          <button>Invite</button>
-        </a>
-      </div>
-    </div>
+
+    <% if (guild.icon) { 
+          iconurl = "https://cdn.discordapp.com/icons/" + guild.id + "/" + guild.icon
+          + ".png??size=512" ; 
+        } else {
+          iconurl = "https://media.discordapp.net/attachments/1011085179441389612/1025868240385233059/unknown.png?width=130&height=130" ; 
+        } %>
+
+        <div class="col-lg-4">
+        <div class="card shadow-sm">
+        <div class="card-header bg-transparent text-center">
+
+        <div>
+          <div>
+            <img class="profile_img" src="<%= iconurl %>" alt="Loading">
+          </div>
+        <div>
+            <%= guild.name %>
+        </div>
+        <div>
+            <a href="https://discord.com/oauth2/authorize?client_id=903456741721780265&permissions=8&scope=bot%20applications.commands">
+          <button class="btn2 btn-primary" role="button">Invite</button>
+            </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
   <% })%>
+  <!-- Servers en donde (NO ESTA) Yuriko -->
+
+<!-- Footer -->
+<%- include('./components/footer') -%>
+<!-- Footer -->
+
+  </sectionDashboard>
+
 </body>
+<!-- Body -->
 
 </html>
